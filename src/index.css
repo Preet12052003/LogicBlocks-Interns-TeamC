@@ -27,6 +27,7 @@ body {
 @media (width <= 701px) {
   .home_flex_main{
     flex-direction: column;
+    flex-wrap: wrap;
     width: 100%;
     height: auto;
     gap: 2rem;
