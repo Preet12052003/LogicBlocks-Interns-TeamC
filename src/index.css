@@ -23,3 +23,12 @@ body {
   border-radius: 5px;     /* Optional rounded corners */
   padding: 5px;           /* Some padding */
 }
+
+@media (width <= 701px) {
+  .home_flex_main{
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 2rem;
+  }
+}
