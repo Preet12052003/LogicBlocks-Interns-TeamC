@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from '@mui/material';
 import Draggable from 'react-draggable';
-import { Resizable } from 're-resizable';
 
 // Import the button components
 import FlagButton from './Canvas/FlagButton';
@@ -13,28 +12,36 @@ import ZoomOut from './Canvas/ZoomOut';
 import FullScreen from './Canvas/FullScreen';
 
 const Canvas = () => {
+  const [canvasStack, setCanvasStack] = useState([{ width: '50%', height: '50%' }]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleUndo = () => {
+    console.log(currentIndex)
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  const handleRedo = () => {
+    if (currentIndex < canvasStack.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
   return (
-    <Card className="highlighted" style={{ position: 'relative', width: '30%', margin: '28px 0', height: '60vh', overflow: 'hidden' }}>
+    <Card className="highlighted" style={{ position: 'relative', width: '700px', margin: '28px auto', height: '600px', overflow: 'hidden' }}>
       <h1 style={{ textAlign: 'center', fontSize: '14px' }}>Canvas</h1>
       <Draggable bounds="parent" defaultPosition={{ x: 150, y: 100 }}>
-        <Resizable
-          defaultSize={{
-            width: '50%',
-            height: '50%'
-          }}
-          style={{
+        <div style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: `url(trial_sprite_nobkg.png) center / contain no-repeat`,
+            background: 'url(trial_sprite_nobkg.png) center / contain no-repeat',
             cursor: 'move',
-            aspectRatio: '16 / 9', // Set the aspect ratio to 16:9
-            maxHeight: 'calc(100vh - 200px)', // Adjust the max height as needed
-            maxWidth: 'calc(100vw - 200px)' // Adjust the max width as needed
+            width: canvasStack[currentIndex].width,
+            height: canvasStack[currentIndex].height,
           }}
-        >
-          <div style={{ width: '100%', height: '100%' }} />
-        </Resizable>
+        />
       </Draggable>
 
       <div style={{
@@ -43,13 +50,13 @@ const Canvas = () => {
         right: 10,
         display: 'flex',
         justifyContent: 'space-between',
-        width: '100%'
+        width: '100%',
       }}>
         <div>
           <FlagButton onClick={() => { }} />
           <StopButton onClick={() => { }} />
-          <UndoButton onClick={() => { }} />
-          <RedoButton onClick={() => { }} />
+          <UndoButton onClick={handleUndo} />
+          <RedoButton onClick={handleRedo} />
         </div>
         <div>
           <ZoomIn onClick={() => { }} />
