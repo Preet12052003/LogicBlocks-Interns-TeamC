@@ -16,11 +16,8 @@ const Canvas = () => {
   return (
     <Card className="highlighted" style={{ position: 'relative', width: '30%', margin: '28px 0', height: '60vh', overflow: 'hidden' }}>
       <h1 style={{ textAlign: 'center', fontSize: '14px' }}>Canvas</h1>
-      <Draggable bounds="parent" defaultPosition={{ x: 150, y: 100 }}>
+      <Draggable bounds="parent" style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}} defaultPosition={{ x: 150, y: 100 }}>
         <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
             background: 'url(trial_sprite_nobkg.png) center / contain no-repeat',
             cursor: 'move',
             height: '50%',
