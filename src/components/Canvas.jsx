@@ -12,24 +12,9 @@ import ZoomOut from './Canvas/ZoomOut';
 import FullScreen from './Canvas/FullScreen';
 
 const Canvas = () => {
-  const [canvasStack, setCanvasStack] = useState([{ width: '50%', height: '50%' }]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleUndo = () => {
-    console.log(currentIndex)
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
-
-  const handleRedo = () => {
-    if (currentIndex < canvasStack.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
 
   return (
-    <Card className="highlighted" style={{ position: 'relative', width: '700px', margin: '28px auto', height: '600px', overflow: 'hidden' }}>
+    <Card className="highlighted" style={{ position: 'relative', width: '30%', margin: '28px 0', height: '60vh', overflow: 'hidden' }}>
       <h1 style={{ textAlign: 'center', fontSize: '14px' }}>Canvas</h1>
       <Draggable bounds="parent" defaultPosition={{ x: 150, y: 100 }}>
         <div style={{
@@ -55,8 +40,8 @@ const Canvas = () => {
         <div>
           <FlagButton onClick={() => { }} />
           <StopButton onClick={() => { }} />
-          <UndoButton onClick={handleUndo} />
-          <RedoButton onClick={handleRedo} />
+          <UndoButton onClick={() => {}} />
+          <RedoButton onClick={() => {}} />
         </div>
         <div>
           <ZoomIn onClick={() => { }} />
