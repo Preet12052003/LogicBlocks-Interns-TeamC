@@ -23,8 +23,8 @@ const Canvas = () => {
             justifyContent: 'center',
             background: 'url(trial_sprite_nobkg.png) center / contain no-repeat',
             cursor: 'move',
-            width: canvasStack[currentIndex].width,
-            height: canvasStack[currentIndex].height,
+            height: '50%',
+            width: '50%'
           }}
         />
       </Draggable>
