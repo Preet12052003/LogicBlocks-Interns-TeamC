@@ -16,7 +16,7 @@ const BlocklyComponent = () => {
         Blockly.setLocale('en');
       // Construct the complete toolbox XML
       const toolboxXml = `
-        <xml id="toolbox" style="display: none">
+        <xml id="toolbox" style="display:none">
           ${Logic}
           ${Loops}
           ${Math}
@@ -30,9 +30,9 @@ const BlocklyComponent = () => {
 
   return (
     <div style={{ minWidth: '70%', height: '60vh' }}>
-      <h1 style={{ display: 'inline-block', fontSize: '14px', marginRight: '500px' }}>Blockly Toolbox</h1>
+      <h1 style={{ display: 'inline-block', fontSize: '14px', marginRight: '500px',marginLeft:'5px'}}>Blockly Toolbox</h1>
       <h1 style={{ display: 'inline-block', fontSize: '14px' }}>Blockly Workspace</h1>
-      <div className="highlighted" id="blocklyDiv" style={{ height: '100%', width: '100%', position: 'relative' }}></div>      
+      <div className="highlighted" id="blocklyDiv" style={{ height: '100%', width: '100%', position: 'relative',marginLeft:'5px' }}></div>      
     </div>
   );
 };
