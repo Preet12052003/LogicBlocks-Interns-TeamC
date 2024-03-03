@@ -21,7 +21,7 @@ const theme = createTheme({
   palette: {
     primary: {
      
-      main: '#d500f9',
+      main: '#7b1fa2',
       
     },
     secondary:lime
@@ -60,7 +60,7 @@ export default function Header() {
         <Toolbar >
           {/* LogicBlocks Title */}
           <Typography  variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <h1 style={{fontfamily:"Georgia",fontweight: '400',fontstyle: 'normal'}}>LogicBlocks</h1>
+            <h2 style={{fontFamily: 'Raleway',fontstyle: ''}}>LogicBlocks</h2>
           </Typography>
 
           {/* Navigation Buttons */}

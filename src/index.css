@@ -21,7 +21,7 @@ body {
 /* Base styling for the tree row */
 .blocklyTreeRow {
   border: 2px solid #333;
-  background-color:#B19CD9;
+  background-color:#7b1fa2;
   margin: 10px 10px;
   border-radius: 10px;
   padding: 15px;
@@ -49,7 +49,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, #B19CD9, #D5BEEA);
+  background: linear-gradient(45deg, #7b1fa2, #D5BEEA);
   border-radius: 5px;
   z-index: -1;
 }
@@ -62,7 +62,7 @@ body {
 /* Add a border animation */
 @keyframes borderPulse {
   0% {
-    border-color:#B19CD9;
+    border-color:#7b1fa2;
   }
   50% {
     border-color: #D5BEEA;
